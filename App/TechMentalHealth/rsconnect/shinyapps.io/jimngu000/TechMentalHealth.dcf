@@ -1,0 +1,12 @@
+name: TechMentalHealth
+title: TechMentalHealth
+username: jimngu000
+account: jimngu000
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 12094799
+bundleId: 8678106
+url: https://jimngu000.shinyapps.io/TechMentalHealth/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

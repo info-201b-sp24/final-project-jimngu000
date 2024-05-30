@@ -2,6 +2,7 @@ library(shiny)
 library(ggplot2)
 library(tidyverse)
 library(dplyr)
+library(shinythemes)
 
 # set up data for any widgets
 social_media <- read.csv('https://raw.githubusercontent.com/info-201b-sp24/final-project-jimngu000/main/Data/smmh.csv')
@@ -15,7 +16,7 @@ intro_page <- tabPanel(
     # page content
     mainPanel(
         ui <- fluidPage(
-            theme = bslib::bs_theme(bootswatch = "minty"),
+            theme = shinytheme("flatly"),
             tags$h1("Introduction"),
             tags$img(src="https://ahahealthtech.org/wp-content/uploads/2020/04/Mental-Health-Technology.jpg",
                      height=350,
@@ -87,7 +88,7 @@ page_two <- tabPanel(
         # display chart
         mainPanel(
             ui <- fluidPage(
-                theme = bslib::bs_theme(bootswatch = "minty"),
+                theme = shinytheme("flatly"),
                 plotOutput(outputId = "page_2_chart"),
                 tags$h3("Description"),
                 tags$p("This chart represents the number of companies (separated by company size) that provide some sort of mental health treatment, including therapy, screenings, workshops, or other benefits. It divides these results up by state according to the states that were included in the survey respondents’ submissions. This chart is important because it allows us to see how companies of different sizes provide different levels of care for those suffering from mental health conditions, and can help us analyze these trends across states.")
@@ -112,7 +113,7 @@ page_three <- tabPanel(
 
         mainPanel(
             ui <- fluidPage(
-                theme = bslib::bs_theme(bootswatch = "minty"),
+                theme = shinytheme("flatly"),
                 plotOutput(outputId = "page_3_chart"),
                 tags$h3("Description"),
                 tags$p("This chart represents the number of users that utilize social media for various amounts of time on a daily basis. The chart also incorporates organization by four different occupations, allowing us to see trends across different demographics (presumably different age groups across the occupations). This chart is important because it lets us analyze both high and low social media usage by certain groups. Since the recommended amount of social media usage per day is roughly 2 hours, this might indicate a higher likelihood of certain groups being negatively affected by social media due to high usage.")
@@ -147,7 +148,7 @@ page_four <- tabPanel(
         # display chart
         mainPanel(
             ui <- fluidPage(
-                theme = bslib::bs_theme(bootswatch = "minty"),
+                theme = shinytheme("flatly"),
                 plotOutput(outputId = "page_4_chart"),
                 tags$h3("Description"),
                 tags$p("This chart represents the age distribution of employees in the tech industry who reported mental health conditions, separated by U.S. states. The chart also incorporates whether or not the respondents sought out mental health treatment or not, as well as the size of the company in terms of the number of employees. The states included in the chart are those which were reported in the survey that each respondent filled out. This chart is important because it allows us to see the different age groups that are the most prone to mental health conditions across differing locations within the U.S., as well as assess the likelihood of certain age groups seeking out mental health treatment (and whether or not company size factors into this likelihood).")
@@ -161,7 +162,7 @@ takeaways <- tabPanel(
     "Conclusions & Takeaways",
 
     ui <- fluidPage(
-            theme = bslib::bs_theme(bootswatch = "minty"),
+            theme = shinytheme("flatly"),
             tags$h1("Conclusions & Takeaways"),
             tags$p("As a result of my research, I noticed some trends that helped me lean towards certain answers for my initial response questions. For example, I noticed that it is becoming relatively more common that larger-size companies are providing mental health benefits, according to responses given in the tech survey I analyzed. Washington, one of the states with the highest number of respondents, had over 75 employees from companies with more than 1000 people responding that their company provided mental health care benefits. California also had over 300 employees from companies with over 1000 people indicating that their company provided mental health benefits, and over 50 employees from companies with 100-500 people indicating the same."),
             tags$p("Another trend I noticed was that university and school students are more likely to utilize social media for an unhealthy amount of time. According to the chart on social media usage by occupation, over 75 respondents who selected “University Student” as their occupation claim they use social media for more than 5 hours per day. Whereas only roughly 40 respondents reported using social media for between 1-2 hours or less than an hour per day. Experts generally recommend only between 30 minutes to 2 hours of social media per day for it to be considered a healthy level of usage, so it was interesting to see how the level of healthy social media usage differed across occupations and even within the same ones."),
